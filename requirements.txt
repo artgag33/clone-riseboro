@@ -1,6 +1,11 @@
-streamlit>=1.40.0
+# Pinned: streamlit-echarts 0.7.0 fails to register its component on every
+# streamlit release tested (1.48-1.65), and st.dataframe(width=...) takes an
+# int, so the string form used before needs use_container_width instead.
+streamlit==1.48.1
+streamlit-echarts[pyecharts]==0.4.0
 pandas>=2.0.0
+numpy>=1.24.0
 requests>=2.31.0
 openpyxl>=3.0.0
-streamlit-echarts[pyecharts]>=0.7.0
 scipy>=1.12.0
+pydeck>=0.9.0

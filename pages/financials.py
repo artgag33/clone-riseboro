@@ -456,7 +456,7 @@ with tab1:
             data=csv_data,
             file_name="riseboro_units_rents.csv",
             mime="text/csv",
-            width="stretch",
+            use_container_width=True,
         )
 
     st.dataframe(
@@ -470,7 +470,7 @@ with tab1:
             "Rent Tier": st.column_config.TextColumn("Rent Tier", width="small"),
         },
         hide_index=True,
-        width="stretch",
+        use_container_width=True,
         height=380,
     )
 
@@ -598,7 +598,7 @@ with tab2:
         st.markdown('<div class="chart-card-title"> Permanent Lenders</div>', unsafe_allow_html=True)
         lender_counts = filtered_building[filtered_building["Lender"] != "Not Specified"]["Lender"].value_counts().reset_index()
         lender_counts.columns = ["Lender Entity", "Project Count"]
-        st.dataframe(lender_counts, hide_index=True, width="stretch", height=240)
+        st.dataframe(lender_counts, hide_index=True, use_container_width=True, height=240)
         st.markdown("</div>", unsafe_allow_html=True)
 
     with c_lend2:
@@ -606,7 +606,7 @@ with tab2:
         st.markdown('<div class="chart-card-title"> LIHTC Syndicators & Partners</div>', unsafe_allow_html=True)
         synd_counts = filtered_building[filtered_building["Syndicator"] != "Not Specified"]["Syndicator"].value_counts().reset_index()
         synd_counts.columns = ["Syndicator / Equity Partner", "Project Count"]
-        st.dataframe(synd_counts, hide_index=True, width="stretch", height=240)
+        st.dataframe(synd_counts, hide_index=True, use_container_width=True, height=240)
         st.markdown("</div>", unsafe_allow_html=True)
 
 
@@ -772,7 +772,7 @@ with tab3:
                 "Total WOs": st.column_config.NumberColumn("Total WOs", format="%d"),
             },
             hide_index=True,
-            width="stretch",
+            use_container_width=True,
             height=340,
         )
 
@@ -871,7 +871,7 @@ with tab4:
             "Lessee Type_commercial": "Lessee Type",
         }),
         hide_index=True,
-        width="stretch",
+        use_container_width=True,
         height=320,
     )
     st.markdown("</div>", unsafe_allow_html=True)
@@ -1195,7 +1195,7 @@ with tab5:
                 "Latest Fee Date": st.column_config.TextColumn("Latest Fee Date", width="small"),
             },
             hide_index=True,
-            width="stretch",
+            use_container_width=True,
             height=340,
         )
 
@@ -1288,7 +1288,7 @@ with tab5:
                 data=csv_fee_data,
                 file_name="riseboro_hpd_fee_charges.csv",
                 mime="text/csv",
-                width="stretch",
+                use_container_width=True,
             )
 
         st.dataframe(
@@ -1304,7 +1304,7 @@ with tab5:
                 "DOF Transfer Date": st.column_config.TextColumn("DOF Billed", width="small"),
             },
             hide_index=True,
-            width="stretch",
+            use_container_width=True,
             height=380,
         )
 
