@@ -6,6 +6,10 @@ st.set_page_config(
     layout="wide",
 )
 
+from src.auth import require_login
+
+require_login()
+
 pg = st.navigation(
     [
         st.Page(
