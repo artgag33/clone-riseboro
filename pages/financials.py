@@ -392,7 +392,7 @@ with tab1:
     st.markdown('<div class="chart-card-title"> Rent Economics by Bedroom Count</div>', unsafe_allow_html=True)
 
     if not bed_summary.empty:
-        col_b1, col_b2, col_b3, col_b4, col_b5 = st.columns(len(bed_summary))
+        bed_columns = st.columns(len(bed_summary))
         for idx, (_, row) in enumerate(bed_summary.iterrows()):
             with [col_b1, col_b2, col_b3, col_b4, col_b5][min(idx, 4)]:
                 st.markdown(
