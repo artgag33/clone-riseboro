@@ -394,7 +394,7 @@ with tab1:
     if not bed_summary.empty:
         bed_columns = st.columns(len(bed_summary))
         for idx, (_, row) in enumerate(bed_summary.iterrows()):
-            with [col_b1, col_b2, col_b3, col_b4, col_b5][min(idx, 4)]:
+            with bed_columns[idx]:
                 st.markdown(
                     f"""
                     <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1rem; text-align: center;">
